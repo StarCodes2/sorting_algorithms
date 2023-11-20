@@ -25,4 +25,7 @@ void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 
+/* Helper Function Prototypes */
+void node_swap(listint_t **list, listint_t *pos, listint_t *node);
+
 #endif /* SORT_H */
