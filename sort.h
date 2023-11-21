@@ -24,10 +24,13 @@ void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
+void shell_sort(int *array, size_t size);
+void cocktail_sort_list(listint_t **list);
 
 /* Helper Function Prototypes */
 void node_swap(listint_t **list, listint_t *pos, listint_t *node);
 void q_sort(int *array, size_t size, int start, int end);
 int lomuto_part(int *array, size_t size, int start, int end);
+void list_swap(listint_t **list, listint_t *left_n, listint_t *right_n);
 
 #endif /* SORT_H */
