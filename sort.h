@@ -27,5 +27,7 @@ void quick_sort(int *array, size_t size);
 
 /* Helper Function Prototypes */
 void node_swap(listint_t **list, listint_t *pos, listint_t *node);
+void q_sort(int *array, size_t size, int start, int end);
+int lomuto_part(int *array, size_t size, int start, int end);
 
 #endif /* SORT_H */
