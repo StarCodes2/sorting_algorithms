@@ -32,7 +32,7 @@ void hq_sort(int *array, size_t size, int start, int end)
 	{
 		part = hoare_part(array, size, start, end);
 		hq_sort(array, size, start, part - 1);
-		hq_sort(array, size, part + 1, end);
+		hq_sort(array, size, part, end);
 	}
 }
 
@@ -52,25 +52,28 @@ int hoare_part(int *array, size_t size, int start, int end)
 {
 	int i, j, pivot, tmp;
 
-	pivot = array[((end - start) / 2) + start];
-	i = start;
-	j = end;
+	pivot = array[end];
+	i = start - 1;
+	j = end + 1;
 
-	while (1)
+	while (i < j)
 	{
-		while (array[i] < pivot)
+		do {
 			i++;
+		} while (array[i] < pivot);
 
-		while (array[j] > pivot)
+		do {
 			j--;
+		} while (array[j] > pivot);
 
-		if (i >= j)
-			return (j);
-
-		tmp = array[i];
-		array[i] = array[j];
-		array[j] = tmp;
-
-		print_array(array, size);
+		if (i < j)
+		{
+			tmp = array[i];
+			array[i] = array[j];
+			array[j] = tmp;
+			print_array(array, size);
+		}
 	}
+
+	return (i);
 }
